@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Aseguradora - Policies CRUD",
+    "_postman_id": "11111111-1111-1111-1111-111111111111",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear póliza",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/policies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "policies"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroPoliza\": \"POL-0001\",\n  \"tipoSeguro\": \"Auto\",\n  \"titular\": \"Juan Pérez\",\n  \"monto\": 12000\n}"
+        }
+      }
+    },
+    {
+      "name": "Listar pólizas",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/policies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "policies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Obtener por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/policies/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "policies",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Actualizar por ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/policies/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "policies",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"monto\": 13000\n}"
+        }
+      }
+    },
+    {
+      "name": "Eliminar por ID",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{base_url}}/api/policies/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "policies",
+            ":id"
+          ]
+        }
+      }
+    }
+  ]
+}
